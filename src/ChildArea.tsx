@@ -1,12 +1,27 @@
-import React from "react";
+import React, { memo } from "react";
 
 type Props = {
   open: boolean;
+  onClickClose: () => void;
 };
 
-const ChildArea = (props: Props) => {
-  const { open } = props;
-  return <>{open ? <div>ChildArea</div> : null}</>;
-};
+const ChildArea = memo((props: Props) => {
+  const { open, onClickClose } = props;
+  console.log("再レンダリングされた");
+  const data = [...Array(2000).keys()];
+  data.forEach(() => {
+    console.log("aaa");
+  });
+  return (
+    <>
+      {open ? (
+        <>
+          <div>ChildArea</div>
+          <button onClick={onClickClose}>閉じる</button>
+        </>
+      ) : null}
+    </>
+  );
+});
 
 export default ChildArea;
