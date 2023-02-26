@@ -30,10 +30,11 @@ const Post = () => {
   return (
     <>
       <h2>Single Post</h2>
-      <p>{post.id}</p>
-      <p>ID:{post.id}</p>
-      <p>タイトル:{post.title}</p>
-      <p>内容:{post.body}</p>
+      <div>
+        <p>ID:{post.id}</p>
+        <p>タイトル:{post.title}</p>
+        <p>内容:{post.body}</p>
+      </div>
     </>
   );
 };
